@@ -7,6 +7,7 @@ import {
     createMessage,
     onMessage,
 } from '../fetch-utils.js';
+import { renderMessages } from '../render-utils.js';
 
 const imgEl = document.querySelector('#avatar-img');
 const usernameHeaderEl = document.querySelector('.username-header');
@@ -37,6 +38,7 @@ messageForm.addEventListener('submit', async (e) => {
     const data = new FormData(messageForm);
     const user = getUser();
     const senderProfile = await getProfile(user.id);
+    console.log(senderProfile, 'sender profile');
 
     if (!senderProfile) {
         alert('You must make your profile before you can message');
@@ -50,19 +52,20 @@ messageForm.addEventListener('submit', async (e) => {
         });
         messageForm.reset();
     }
+    // await fetchAndDisplayProfile();
 });
 
 async function fetchAndDisplayProfile() {
     profileDetailEl.textContent = '';
 
     const profile = await getProfileById(id);
-    console.log('profile', profile);
     imgEl.src = profile.avatar_url;
     usernameHeaderEl.textContent = profile.username;
 
     const profileStars = renderStars(profile);
+    const messagesList = renderMessages(profile);
 
-    profileDetailEl.append(profileStars);
+    profileDetailEl.append(profileStars, messagesList);
 }
 
 function renderStars({ stars, username, id }) {

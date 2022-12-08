@@ -66,12 +66,12 @@ export async function getProfile(user_id) {
 }
 
 export async function getProfileById(id) {
-    const response = await client.from('profiles').select('*').match({ id }).single();
+    const response = await client.from('profiles').select('*, messages(*)').match({ id }).single();
     return checkError(response);
 }
 
 export async function getProfiles() {
-    const response = await client.from('profiles').select();
+    const response = await client.from('profiles').select('*');
     return checkError(response);
 }
 
