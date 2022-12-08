@@ -17,3 +17,11 @@ export function renderProfile(profileObject) {
     div.append(img, a, p);
     return div;
 }
+
+export function renderMessages(profile) {
+    const ul = document.createElement('ul');
+    ul.classList.add('messages');
+
+    const header = document.createElement('h3');
+    const li = document.createElement('li');
+}
