@@ -96,6 +96,15 @@ export async function decrementStars(id) {
     return checkError(response);
 }
 
+export async function createMessage(message) {
+    const response = await client.from('messages').insert(message).single();
+    return checkError(response);
+}
+
+export function onMessage(profileId, handleMessage) {
+    client.from(`messages:recipient_id=eq.${profileId}`).on('INSERT', handleMessage).subscribe();
+}
+
 function checkError(response) {
     return response.error ? console.error(response.error) : response.data;
 }
