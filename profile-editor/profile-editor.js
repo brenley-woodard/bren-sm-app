@@ -44,6 +44,7 @@ profileForm.addEventListener('submit', async (e) => {
     const formData = new FormData(profileForm);
     // intial profile object
     const profileObj = {
+        user_id: user.id,
         username: formData.get('username'),
         bio: formData.get('bio'),
     };
@@ -59,7 +60,7 @@ profileForm.addEventListener('submit', async (e) => {
 
         profileObj.avatar_url = url;
     }
-
+    console.log(profileObj);
     const response = await upsertProfile(profileObj);
 
     error = response.error;

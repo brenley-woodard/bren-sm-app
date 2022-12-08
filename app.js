@@ -1,10 +1,11 @@
 /* Imports */
 import './auth/user.js';
-import { getProfiles } from './fetch-utils.js';
+import { getProfiles, signOutUser } from './fetch-utils.js';
 import { renderProfile } from './render-utils.js';
 
 /* Get DOM Elements */
 const listEl = document.querySelector('.list');
+const signOut = document.getElementById('sign-out-link');
 
 /* State */
 
@@ -24,3 +25,7 @@ async function fetchAndDisplayProfiles() {
         listEl.append(profileEl);
     }
 }
+
+signOut.addEventListener('click', async () => {
+    await signOutUser();
+});
