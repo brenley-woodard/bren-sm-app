@@ -78,8 +78,8 @@ function renderStars({ stars, username, id }) {
     profileStars.classList.add('profile-stars');
     profileStars.append(p, upButton, downButton);
 
-    downButton.textContent = 'downvote user ⬇️';
-    upButton.textContent = 'upvote user ⬆️';
+    downButton.textContent = 'downvote user 🌒';
+    upButton.textContent = 'upvote user 🌖';
     p.classList.add('profile-name');
 
     p.textContent = `${username} has ${stars} 🌙`;

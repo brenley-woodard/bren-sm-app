@@ -23,7 +23,7 @@ export function renderMessages(profile) {
     const ul = document.createElement('ul');
     const header = document.createElement('h3');
 
-    header.textContent = `${profile.username}'s Wall`;
+    header.textContent = `${profile.username}'s wall`;
 
     ul.classList.add('messages');
 

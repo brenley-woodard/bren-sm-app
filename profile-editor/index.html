@@ -216,6 +216,7 @@
                 <label>
                     Username
                     <input
+                        id="name-in"
                         name="username"
                         minlength="3"
                         required
@@ -224,12 +225,21 @@
                 </label>
                 <label>
                     Bio
-                    <textarea name="bio" placeholder="Your information here..."></textarea>
+                    <textarea
+                        id="bio-in"
+                        name="bio"
+                        placeholder="Your information here..."
+                    ></textarea>
                 </label>
 
                 <label>
                     Avatar
-                    <input type="file" name="avatar" placeholder="upload an image..." />
+                    <input
+                        id="file-btn"
+                        type="file"
+                        name="avatar"
+                        placeholder="upload an image..."
+                    />
                 </label>
                 <img id="preview" class="avatar" alt="avatar preview" src="/assets/avatar.jpeg" />
 
