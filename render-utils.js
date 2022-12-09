@@ -7,10 +7,11 @@ export function renderProfile(profileObject) {
     div.classList.add('profile-list-item');
     img.classList.add('avatar');
     a.classList.add('profile-link');
+    p.classList.add('moons');
 
     img.src = profileObject.avatar_url;
     img.alt = 'avatar';
-    p.textContent = `⭐️${profileObject.stars}`;
+    p.textContent = `🌙${profileObject.stars}`;
     a.textContent = `${profileObject.username}`;
     a.href = `../profile/?id=${profileObject.id}`;
 

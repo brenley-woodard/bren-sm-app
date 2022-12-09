@@ -74,7 +74,7 @@ authForm.addEventListener('submit', async (e) => {
 function displayAuth() {
     // set the text display on the header, button, and change type link
     if (isSignIn) {
-        authHeader.textContent = 'Sign in to your account';
+        authHeader.textContent = 'Sign in to start queuing';
         authButton.textContent = 'Sign In';
         changeType.textContent = 'Need to create an account?';
     } else {

@@ -1,11 +1,11 @@
 :root {
-    --background: rgb(179, 175, 182);
-    --header-background: rgb(218, 204, 204);
-    --text-color: rgb(7, 5, 68);
+    --background: #665515;
+    --header-background: #472836;
+    --text-color: #dddbcb;
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
     --offset-color: rgb(217, 236, 217);
-    --action-color: rgb(77, 132, 252);
+    --action-color: #002e2c;
 
     --primary-font: 'Playfair Display', serif, 'Rubik', Corbel, 'Lucida Grande',
         'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
@@ -15,7 +15,6 @@
 body {
     height: 100vh;
     font-family: var(--primary-font);
-    color: var(--text-color);
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;

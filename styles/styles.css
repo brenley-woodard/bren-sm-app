@@ -1,6 +1,45 @@
 main {
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
-    color: black;
+    font-size: 24px;
+    color: #dddbcb;
     text-decoration: none;
+}
+
+a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #dddbcb;
+    text-decoration: none;
+}
+
+#home-btn {
+    margin-right: 25px;
+}
+
+#profile-btn {
+    margin-right: 20px;
+}
+
+#sign-out-link {
+    margin-right: 5px;
+}
+
+#social-queue {
+    font-size: 3em;
+}
+
+.moons {
+    font-size: 32px;
+    display: flex;
+    align-items: right;
+}
+
+h1 {
+    color: #dddbcb;
+    font-size: 3em;
+}
+
+#title-auth {
+    color: #dddbcb;
+    font-size: 3em;
 }

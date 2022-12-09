@@ -82,7 +82,7 @@ function renderStars({ stars, username, id }) {
     upButton.textContent = 'upvote user ⬆️';
     p.classList.add('profile-name');
 
-    p.textContent = `${username} has ${stars} ⭐️`;
+    p.textContent = `${username} has ${stars} 🌙`;
 
     downButton.addEventListener('click', async () => {
         await decrementStars(id);

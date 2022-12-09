@@ -72,6 +72,7 @@ profileForm.addEventListener('submit', async (e) => {
     } else {
         location.assign('/');
     }
+    profileForm.reset();
 });
 
 avatarInput.addEventListener('change', () => {
