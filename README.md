@@ -1,26 +1,98 @@
-## The Golden Rule:
+# Plan
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+(copied Madden's plan to save time)
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+## Table
 
-## Making a plan
+-   profiles
+    -   id
+    -   user_id (foreign key to users table)
+    -   bio
+    -   stars
+    -   avatar_url
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1. **For each HTML element ask: Why do I need this?**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1. **Think about how to validate each of your features according to a Definition of Done**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## Pages
 
-Additional considerations:
+-   profile editor/creator
+-   profile list (home)
+-   profile detail
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+## HTML
+
+-   editor page
+    -   FORM
+        -   input with label for USERNAME
+        -   input with label for BIO
+        -   input with label for Avatar
+        -   img (for preview of the avatar)
+        -   button
+        -   p tag in for error display
+-   profile list
+    -   list container that is hardcoded
+-   profile detail
+    -   hardcode an img & header
+    -   stars detail container
+
+## Events
+
+-   editor page
+    -   page load -> getting profile information from supabase and display on form (if exists)
+    -   avatar image input ("change") -> display img preview
+    -   form submit
+        -   utilize the users input and send it to supabase
+        -   upsert to send supabase
+        -   error handling to display issues to user
+-   profiles page
+    -   up and down vote button clicks
+        -   increment or decrement the stars count in supabase
+    -   page load fetch
+-   profiles list
+    -   page load fetch
+
+## Functions
+
+-   uploadImage(imagePath, imageFile)
+-   upsertProfile(profile)
+-   getProfile(user_id) & getProfileById(id)
+-   incrementStars(id) and decrementStars(id)
+
+## Slices
+
+-   create/edit simple profile (username & bio)
+-   add in avatar upoload to profile
+-   get Profile back from supbase (use it to fill in the form)
+-   error handling & button disable
+-   profiles list
+-   profile detail page & stars up and down votes
+
+---
+
+# Part B
+
+# Profile Page
+
+## HTML
+
+-   form for message input (with label and button)
+
+## Events
+
+-   page load -> add subscribing for realtime updates on CREATE of message
+-   form submit
+    -   get user's form input values
+    -   check sender user has profile info
+    -   send message to supabase
+    -   reset form
+    -   (before we implement reatime) call out fetch&display function
+
+## Function
+
+-   createMessage
+-   onMessage (for realtime)
+
+## Slices
+
+-   messages table in supabase
+    -   will have ID, created_at, text, sender, recipient_id(link to profile.id), user_id
+-   create Message functionality
+-   implement realtime updates

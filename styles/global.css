@@ -1,20 +1,20 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: white;
-    --text-color: rgb(7, 5, 68);
+    --background: #665515;
+    --header-background: #472836;
+    --text-color: #dddbcb;
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
     --offset-color: rgb(217, 236, 217);
-    --action-color: rgb(77, 132, 252);
+    --action-color: #002e2c;
 
-    --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
-        'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
+    --primary-font: 'Playfair Display', serif, 'Rubik', Corbel, 'Lucida Grande',
+        'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+        'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
 
 body {
     height: 100vh;
     font-family: var(--primary-font);
-    color: var(--text-color);
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
@@ -54,8 +54,8 @@ main {
 }
 
 .avatar {
-    height: 36px;
-    width: 36px;
+    height: 70px;
+    width: 70px;
     object-fit: cover;
     border: 1px solid var(--placeholder-color);
     border-radius: 100%;

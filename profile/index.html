@@ -7,15 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Social Queue</title>
-        <link rel="icon" type="image/x-icon" href="/assets/hand" />
+        <title>My Profile</title>
+        <link rel="icon" type="image/x-icon" href="/assets/hand.png" />
 
         <!-- js -->
         <script
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="profile.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,17 +24,12 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
-            rel="stylesheet"
-        />
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="/styles/styles.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
         <!-- add link for page specific css -->
         <script type="text/javascript">
             // <![CDATA[
@@ -209,16 +204,25 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/hand.png" alt="logo" />
-            <p id="social-queue" class="title">Social Queue</p>
+            <h1 id="title-auth" class="title">My Profile</h1>
             <nav>
                 <a id="home-btn" href="/">Home</a>
-                <a id="profile-btn" href="/profile-editor">Edit Profile</a>
-                <a id="sign-out-link" href="auth">Sign Out</a>
+                <a id="profile-btn" href="../">Back to Profiles</a>
+                <a id="sign-out-link" href="../auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <ul class="list"></ul>
+            <img id="avatar-img" class="avatar" alt="avatar" src="/assets/avatar.jpeg" />
+            <h2 class="username-header"></h2>
+            <form class="message-form">
+                <label>
+                    <p>Post to their wall</p>
+                    <input name="message" />
+                </label>
+                <button type="submit">Post to wall</button>
+            </form>
+            <div class="profile-detail"></div>
         </main>
     </body>
 </html>
