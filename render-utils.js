@@ -23,15 +23,15 @@ export function renderProfile(profileObject) {
 export function renderMessages(profile) {
     const ul = document.createElement('ul');
     const header = document.createElement('h3');
-    const p2 = document.createElement('p');
+    // const p2 = document.createElement('p');
 
     console.log(profile);
     header.textContent = `Message Feed for ${profile.username}`;
-    p2.textContent = `Post to ${profile.username}s page`;
+    // p2.textContent = `Post to ${profile.username}s page`;
 
     ul.classList.add('messages');
 
-    ul.append(header, p2);
+    ul.append(header);
 
     for (let i = 0; i < profile.messages.length; i++) {
         const li = document.createElement('li');

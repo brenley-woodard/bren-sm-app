@@ -61,7 +61,6 @@ export async function uploadImage(imagePath, imageFile) {
 
 export async function getProfile(user_id) {
     const response = await client.from('profiles').select('*').match({ user_id }).maybeSingle();
-    // ({ user_id }) = ({user_id : user_id})
     return response;
 }
 
@@ -99,6 +98,10 @@ export async function decrementStars(id) {
 export async function createMessage(message) {
     const response = await client.from('messages').insert(message).single();
     return checkError(response);
+}
+
+export function onMessage(handleMessage) {
+    client.from(`messages`).on('INSERT', handleMessage).subscribe();
 }
 
 function checkError(response) {
